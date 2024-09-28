@@ -46,12 +46,12 @@ public class MainApp {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Por favor ingrese la ruta de su archivo encriptado .txt:");
         String ruta = scanner.nextLine();
-        String text = FileManager.leerArchivoEncriptado(ruta);
+        String text = FileManager.leerArchivo(ruta);
         System.out.println("Por favor ingrese el codigo para el desencriptado:");
         int shift = scanner.nextInt();
         String textoDesencriptado = cipher.decrypt(text, shift);
         //System.out.println(textoDesencriptado);
-        FileManager.escribirArchivoDesencriptado(textoDesencriptado, "src\\Resources\\TextoDesencriptado.txt");
+        FileManager.escribirArchivo(textoDesencriptado, "src\\Resources\\TextoDesencriptado.txt");
         System.out.println("Desencriptado con exito!");
         System.out.println("Ruta: \"src\\Resources\\TextoDesencriptado.txt\"");
     }
@@ -60,7 +60,7 @@ public class MainApp {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Por favor ingrese la ruta de su archivo encriptado .txt:");
         String ruta = scanner.nextLine();
-        String text = FileManager.leerArchivoEncriptado(ruta);
+        String text = FileManager.leerArchivo(ruta);
         String sample = text.substring(0, Math.min(text.length(), 50));
         System.out.println("A continuacion se muestran todas las combinaciones posibles en un Sample:");
         for (int i = 1; i < 221; i++) {
